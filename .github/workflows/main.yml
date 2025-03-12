@@ -33,6 +33,8 @@ jobs:
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
-          script: /
-            rm -rf /var/www/html
-            git clone https://github.com/sebastianrussel/HeroBiz /var/www/html
+          script: |
+            rm -rf /var/www/html/*
+            rm -rf /var/www/html/.git
+            rm -rf /var/www/html/.github
+            git clone https://github.com/sebastianrussel/HeroBiz /var/www/html/
